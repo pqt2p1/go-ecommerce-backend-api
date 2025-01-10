@@ -1,27 +1,22 @@
 package routers
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	c "github.com/pqt2p1/go-ecommerce-backend-api/internal/controller"
+)
 
 func NewRouter() *gin.Engine {
 	r := gin.Default()
 	v1 := r.Group("/v1/2024")
 	{
-		v1.GET("/ping", Ping)
-		v1.POST("/ping", Ping)
-		v1.PUT("/ping", Ping)
+		v1.GET("/ping", c.NewPongController().Ping)
+		v1.GET("/user/1", c.NewUserController().GetUserByID)
 	}
 
 	v2 := r.Group("/v2/2024")
 	{
-		v2.GET("/ping", Ping)
-		v2.POST("/ping", Ping)
-		v2.PUT("/ping", Ping)
+		v2.GET("/ping", c.NewPongController().Ping)
+		v2.GET("/user/1", c.NewUserController().GetUserByID)
 	}
-    return r
-}
-
-func Ping(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"message": "pong",
-	})
+	return r
 }
