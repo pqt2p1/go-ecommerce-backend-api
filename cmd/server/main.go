@@ -1,11 +1,9 @@
 package main
 
-import "github.com/pqt2p1/go-ecommerce-backend-api/internal/routers"
-
-
-// controler -> service -> repo -> models -> dbs
+import (
+	"github.com/pqt2p1/go-ecommerce-backend-api/internal/initialize"
+)
 
 func main() {
-	r := routers.NewRouter()
-	r.Run(":8080")
+	initialize.Run()
 }
