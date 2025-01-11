@@ -1,12 +1,31 @@
 package routers
 
 import (
+	"fmt"
+
 	"github.com/gin-gonic/gin"
 	c "github.com/pqt2p1/go-ecommerce-backend-api/internal/controller"
+	"github.com/pqt2p1/go-ecommerce-backend-api/internal/middleware"
 )
+
+func AA() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		fmt.Println("Before AA")
+		c.Next()
+		fmt.Println("After AA")
+	}
+}
+
+func CC(c *gin.Context) {
+	fmt.Println("Before CC")
+	c.Next()
+	fmt.Println("After CC")
+}
 
 func NewRouter() *gin.Engine {
 	r := gin.Default()
+	r.Use(middleware.AuthenMiddleware())
+
 	v1 := r.Group("/v1/2024")
 	{
 		v1.GET("/ping", c.NewPongController().Ping)
