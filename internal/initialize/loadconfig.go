@@ -18,7 +18,7 @@ func LoadConfig() {
 	if err != nil {
 		panic(fmt.Errorf("Failed to read configuration: %w \n", err))
 	}
-	// read server configuration
+	// read ser	ver configuration
 	if err := viper.Unmarshal(&global.Config); err != nil {
 		panic(fmt.Errorf("Failed to unmarshal configuration: %w \n", err))
 	}

@@ -1,0 +1,5 @@
+{"level":"INFO","time":"2025-01-11T23:12:44.032+0700","caller":"initialize/run.go:13","msg":"Logger init success"}
+{"level":"INFO","time":"2025-01-11T23:20:35.596+0700","caller":"initialize/run.go:13","msg":"Logger init success"}
+{"level":"INFO","time":"2025-01-11T23:29:19.450+0700","caller":"initialize/run.go:13","msg":"Logger init success"}
+{"level":"INFO","time":"2025-01-11T23:29:41.698+0700","caller":"initialize/run.go:13","msg":"Logger init success"}
+{"level":"INFO","time":"2025-01-11T23:29:56.173+0700","caller":"initialize/run.go:13","msg":"Logger init success"}

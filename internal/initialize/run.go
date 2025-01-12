@@ -10,8 +10,9 @@ func Run() {
 	LoadConfig()
 	fmt.Println("Loading mysql config", global.Config.Mysql.Username)
 	InitLogger()
+	global.Logger.Info("Logger init success")
 	InitMysql()
 	InitRedis()
 	r := InitRouter()
-	r.Run(":8080")
+	r.Run(":8002")
 }
