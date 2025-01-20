@@ -12,5 +12,4 @@ var (
 	Logger = *logger.NewLogger(Config.Logger)
 	Mdb    *gorm.DB
 	Rdb    *redis.Client
-	
 )

@@ -7,6 +7,7 @@ import (
 	"github.com/pqt2p1/go-ecommerce-backend-api/global"
 	"github.com/pqt2p1/go-ecommerce-backend-api/internal/po"
 	"go.uber.org/zap"
+	"gorm.io/driver/mysql" // Import the MySQL driver for Gorm
 	"gorm.io/gorm"
 )
 
@@ -47,10 +48,11 @@ func SetPool() {
 }
 
 func migrateTables() {
-	err := global.Mdb.AutoMigrate{
+	err := global.Mdb.AutoMigrate(
 		&po.Role{},
 		&po.User{},
-	}
+	)
+
 	if err != nil {
 		fmt.Printf("Migrate table mysql error: %s", err)
 	}
